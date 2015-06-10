@@ -4,7 +4,8 @@
 
 Add the following to your docker-compose.yml file:
 
-```apache:
+```YAML
+apache:
     image: yappabe/nginx
     ports:
         - 80:80
