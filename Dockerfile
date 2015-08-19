@@ -3,8 +3,8 @@ FROM debian:jessie
 MAINTAINER Joeri Verdeyen <joeriv@yappa.be>
 
 ENV PHP_FPM_SOCKET "php:9000"
-ENV DOCUMENT_ROOT /var/www/app/web
-ENV INDEX_FILE app_dev.php
+ENV DOCUMENT_ROOT /var/www
+ENV INDEX_FILE index.php
 
 RUN apt-get update && \
     apt-get install -y nginx && \
