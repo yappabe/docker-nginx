@@ -1,3 +1,4 @@
+![Docker pulls](https://img.shields.io/docker/pulls/yappabe/nginx.svg?style=flat)
 # Yappa Nginx Docker Image
 
 ## Usage
