@@ -26,3 +26,14 @@ nginx:
 * DOCUMENT_ROOT defaults to /var/www/app/html
 * INDEX_FILE defaults to app_dev.php
 * PHP_FPM_SOCKET defaults to php:9000
+
+## Nginx Versions
+
+To use a specific Nginx version, append the version number to the image name.
+
+Eg: `image: yappabe/nginx:1.9`
+
+The following Nginx versions are available:
+
+* Nginx 1.6 (jessie stable)
+* Nginx 1.9 (jessie backports)
