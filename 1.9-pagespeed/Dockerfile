@@ -51,8 +51,7 @@ RUN echo deb http://http.debian.net/debian jessie-backports main >> /etc/apt/sou
         --with-http_stub_status_module \
         --with-mail \
         --with-mail_ssl_module \
-        --with-file-aio \
-        --with-http_realip_module && \
+        --with-file-aio && \
     make && make install && \
     cd / && \
     rm -r ${BUILDDIR} && \
