@@ -16,10 +16,14 @@ RUN echo deb http://http.debian.net/debian jessie-backports main >> /etc/apt/sou
     echo Europe/Brussels > /etc/timezone && \
     dpkg-reconfigure --frontend noninteractive tzdata
 
+COPY ssl/dummy.crt  /etc/ssl/crt/dummy.crt
+COPY ssl/dummy.key  /etc/ssl/crt/dummy.key
 COPY nginx.conf /etc/nginx/
 COPY default.conf /etc/nginx/sites-available/
+COPY default-ssl.conf /etc/nginx/sites-available/
 
 RUN ln -sf /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default && \
+    ln -sf /etc/nginx/sites-available/default-ssl.conf /etc/nginx/sites-enabled/default-ssl && \
     usermod -u 1000 www-data && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
