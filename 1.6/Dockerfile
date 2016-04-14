@@ -29,7 +29,6 @@ RUN ln -sf /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/defa
 EXPOSE 80
 EXPOSE 443
 
-
 COPY run.sh run.sh
 
 ENTRYPOINT ["/bin/bash", "/run.sh"]
