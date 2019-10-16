@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    name: Testing build ${{ matrix.nginx_version }}
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        nginx_version: ["1.6", "1.9", "1.9-pagespeed"]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build Nginx ${{ matrix.nginx_version }}
+      run: docker build ${{ matrix.nginx_version }}/ --tag nginx:${{ matrix.nginx_version }}
